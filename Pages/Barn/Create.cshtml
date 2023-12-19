@@ -1,0 +1,93 @@
+﻿@page
+@model NY2023.Pages.Barn.CreateModel
+@{
+}
+
+<br>
+<h2>Liste af børn</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">ID</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="ID" value="@Model.barnInfo.id">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Navn</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="navn" value="@Model.barnInfo.navn">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Fødselsdato</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="fødselsdato" value="@Model.barnInfo.fødselsdato">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Køn</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="køn" value="@Model.barnInfo.køn">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Telefonnummer</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="telefonnummer" value="@Model.barnInfo.telefonnummer">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="email" value="@Model.barnInfo.email">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Solgte_lodder_kontanter</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="solgte_lodder_kontanter" value="@Model.barnInfo.solgte_lodder_kontanter">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Solgte_lodder_Mobilepay</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="solgte_lodder_mobilepay" value="@Model.barnInfo.solgte_lodder_mobilepay">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Modtaget_lodder</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="modtaget_lodder" value="@Model.barnInfo.modtaget_lodder">
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>@Model.successMessage</strong>
+                    <button type="button" class="btn-close" data-bs-dimiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Bekræft</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button">Annullerer</a>
+        </div>
+    </div>
+</form>

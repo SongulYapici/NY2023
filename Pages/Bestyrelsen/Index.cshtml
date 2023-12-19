@@ -1,0 +1,36 @@
+﻿@page
+@model NY2023.Pages.Bestyrelsen.IndexModel
+@{
+}
+
+<br>
+<h2>Super Sælger Liste</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>IDForBørnegruppe</th>
+            <th>SuperSælger</th>
+            <th>AntalSolgteLodderKontanter</th>
+            <th>AntalSolgteLodderMobilepay</th>
+            <th>Telefonnummer</th>
+            <th>Email</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.listbestyrelsen)
+        {
+            <tr>
+                <td>@item.id_for_børne_gruppe</td>
+                <td>@item.super_sælger</td>
+                <td>@item.antal_solgte_lodder_kontanter</td>
+                <td>@item.antal_solgte_lodder_mobilepay</td>
+                <td>@item.telefonnummer</td>
+                <td>@item.email</td>
+              
+            
+            </tr>
+            
+        }
+    </tbody>
+</table>

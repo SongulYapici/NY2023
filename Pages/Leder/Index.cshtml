@@ -1,0 +1,38 @@
+﻿@page
+@model NY2023.Pages.Leder.IndexModel
+@{
+}
+
+<br>
+<h2>Liste over lederene</h2>
+<a class="btn btn-primary btn-sm" href="/Leder/Create">Opret Leder</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Børnegruppe-ID</th>
+            <th>Navn</th>
+            <th>Email</th>
+            <th>Telefonnummer</th>
+            <th>Handlinger</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listleder)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.børnegruppe_id</td>
+                <td>@item.navn</td>
+                <td>@item.email</td>
+                <td>@item.telefonnummer</td>
+         
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Leder/Edit?id=@item.id">Opdatere</a>
+                    <a class="btn btn-danger btn-sm" href="/Leder/Delete?id=@item.id">Slet</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

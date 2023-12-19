@@ -1,0 +1,46 @@
+﻿@page
+@model NY2023.Pages.Barn.IndexModel
+@{
+}
+
+<br>
+<h2>Liste over børn</h2>
+<a class="btn btn-primary btn-sm" href="/Barn/Create">Tilføj ny barn</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Navn</th>
+            <th>Fødselsdato</th>
+            <th>Køn</th>
+            <th>Telefonnummer</th>
+            <th>Email</th>
+            <th>Modtaget-lodsedler</th>
+            <th>SolgteLodsedler-Kontanter</th>
+            <th>SolgteLodsedler-Mobilepay</th>
+            <th>Handlinger</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listbarn)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.navn</td>
+                <td>@item.fødselsdato</td>
+                <td>@item.køn</td>
+                <td>@item.telefonnummer</td>
+                <td>@item.email</td>
+                <td>@item.solgte_lodder_kontanter</td>
+                <td>@item.solgte_lodder_mobilepay</td>
+                <td>@item.modtaget_lodder</td>
+
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Barn/Edit?id=@item.id">Opdatere</a>
+                    <a class="btn btn-danger btn-sm" href="/Barn/Delete?id=@item.id">Slet</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,73 @@
+﻿@page
+@model NY2023.Pages.Børnegruppe.IndexModel
+@{
+}
+
+<br>
+<h2>Liste over børnegrupperne</h2>
+<a class="btn btn-primary btn-sm" href="/Børnegruppe/Create">Tilføj ny børnegruppe</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Navn</th>
+            <th>AntalBørn</th>
+            <th>LederID</th>
+            <th>SolgteLodder</th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listbørnegruppe)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Navn</td>
+                <td>@item.AntalBørn</td>
+                <td>@item.LederID</td>
+                <td>@item.SolgteLodder</td>
+               
+
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Børnegruppe/Edit?id=@item.ID">Opdatere</a>
+                    <a class="btn btn-danger btn-sm" href="/Børnegruppe/Delete?id=@item.ID">Slet</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@* <br>
+<h2>Liste over børnegrupperne</h2>
+<a class="btn btn-primary btn-sm" href="/Børnegruppe/Create">Opret ny børnegruppe</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Navn</th>
+            <th>AntalBørn</th>
+            <th>LederID</th>
+            <th>SolgteLodder</th>
+           
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listbørnegruppe)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.navn</td>
+                <td>@item.antal_børn</td>
+                <td>@item.leder_id</td>
+                <td>@item.solgte_lodder</td>
+         
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Børnegruppe/Edit?id=@item.id">Opdatere</a>
+                    <a class="btn btn-danger btn-sm" href="/Børnegruppe/Delete?id=@item.id">Slet</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> *@
